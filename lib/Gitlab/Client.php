@@ -306,6 +306,14 @@ class Client
     }
 
     /**
+     * @return Api\Runners
+     */
+    public function runners()
+    {
+        return new Api\Runners($this);
+    }
+
+    /**
      * @param string $name
      *
      * @return AbstractApi|mixed
@@ -389,6 +397,9 @@ class Client
 
             case 'schedules':
                 return $this->schedules();
+
+            case 'runners':
+                return $this->runners();
 
             default:
                 throw new InvalidArgumentException('Invalid endpoint: "'.$name.'"');

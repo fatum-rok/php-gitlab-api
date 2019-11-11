@@ -170,6 +170,15 @@ abstract class AbstractApi implements ApiInterface
 
         return ResponseMediator::getContent($response);
     }
+    /**
+     * @param int $id
+     * @param string $path
+     * @return string
+     */
+    protected function getRunnerPath($id, $path)
+    {
+        return 'runners/'.$this->encodePath($id).'/'.$path;
+    }
 
     /**
      * @param int $id
